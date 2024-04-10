@@ -1,7 +1,4 @@
-import mongoose from "mongoose";
-
-const { Schema } = mongoose;
-
+import { Schema } from "mongoose";
 const organizationSchema = new Schema(
   {
     id: {
@@ -27,14 +24,14 @@ const organizationSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Project'
     }],
-    clients: [String], // Assuming clients are represented by their IDs or names
-    plan: Schema.Types.Mixed // Assuming plan can be of any data type
+    clients: [String],
+    plan: Schema.Types.Mixed
   },
   {
     timestamps: true
   }
 );
 
-const Organization = mongoose.model("Organization", organizationSchema);
+const organization = mongoose.model("Organization", organizationSchema);
 
-export default Organization;
+export default organization;
